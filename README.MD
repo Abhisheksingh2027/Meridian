@@ -7,47 +7,47 @@ A real-time video conferencing web application built using the MERN stack, Socke
 
 
 ## 📌 Features
-🔐 User authentication using JWT
-👤 User registration and login
-🎥 Real-time video conferencing
-🎙️ Audio and video controls
-🔄 Peer-to-peer communication using WebRTC
-⚡ Real-time signaling using Socket.IO
-👥 Multiple users can join a meeting
-📴 Mute/unmute microphone
-📹 Turn camera on/off
-🎞️ Display Share
-💬 Real-time communication
-🔗 Meeting/room-based video calls
-📱 Responsive user interface
-🔒 Secure authentication and protected routes
+🔐 User authentication using JWT  
+👤 User registration and login  
+🎥 Real-time video conferencing  
+🎙️ Audio and video controls  
+🔄 Peer-to-peer communication using WebRTC  
+⚡ Real-time signaling using Socket.IO  
+👥 Multiple users can join a meeting  
+📴 Mute/unmute microphone  
+📹 Turn camera on/off  
+🎞️ Display Share  
+💬 Real-time communication  
+🔗 Meeting/room-based video calls  
+📱 Responsive user interface  
+🔒 Secure authentication and protected routes  
 
 
 ## 🛠️ Tech Stack
 ## Frontend
-React.js
-JavaScript
-HTML5
-CSS3
-Axios
-React Router
-Socket.IO Client
-## Backend
-Node.js
-Express.js
-MongoDB
-Mongoose
-JWT Authentication
-Socket.IO
+React.js  
+JavaScript  
+HTML5  
+CSS3  
+Axios  
+React Router  
+Socket.IO Client  
+## Backend  
+Node.js 
+Express.js  
+MongoDB  
+Mongoose  
+JWT Authentication  
+Socket.IO  
 ## Real-Time Communication
-WebRTC — Peer-to-peer audio/video communication
-Socket.IO — Signaling and real-time events
+WebRTC — Peer-to-peer audio/video communication  
+Socket.IO — Signaling and real-time events  
 
 
 
 ## 🏗️ Architecture
 
-The application follows a MERN-based client-server architecture.
+The application follows a MERN-based client-server architecture.  
 
                     ┌─────────────────────┐
                     │      React.js       │
@@ -87,83 +87,83 @@ The application follows a MERN-based client-server architecture.
 
 ## 🔄 How WebRTC Works in This Project
 
-The application uses WebRTC P2P architecture for transmitting audio and video.
+The application uses WebRTC P2P architecture for transmitting audio and video.  
 
-Socket.IO is primarily used for signaling, while the actual media communication happens directly between peers.
+Socket.IO is primarily used for signaling, while the actual media communication happens directly between peers.  
 
-Connection Flow
-User A
+Connection Flow  
+User A  
    │
-   │ Join Room
+   │ Join Room  
    ▼
-Socket.IO Server
+Socket.IO Server  
    │
-   │ Notify User B
+   │ Notify User B  
    ▼
-User B
+User B  
    │
-   │ WebRTC Offer/Answer
-   │
-   ▼
-ICE Candidate Exchange
+   │ WebRTC Offer/Answer  
    │
    ▼
-P2P Connection Established
+ICE Candidate Exchange  
    │
-   ├──────── Audio ────────►
-   └──────── Video ────────►
+   ▼
+P2P Connection Established  
+   │
+   ├──────── Audio ────────►  
+   └──────── Video ────────►  
 
 
 
 
 ## 🔐 Authentication
 
-JWT is used to authenticate users.
+JWT is used to authenticate users.  
 
-Authentication Flow
-User
+Authentication Flow  
+User  
  │
- ├── Register/Login
- │
- ▼
-Backend
- │
- ├── Validate Credentials
- │
- ├── Generate JWT
+ ├── Register/Login  
  │
  ▼
-Client
+Backend  
  │
- └── Store Authentication Token
+ ├── Validate Credentials  
+ │
+ ├── Generate JWT  
+ │
+ ▼
+Client  
+ │
+ └── Store Authentication Token  
         │
         ▼
-   Protected APIs
+   Protected APIs  
 
 
 
 ## ⚡ Socket.IO
 
-Socket.IO is used for real-time communication between clients and the server.
+Socket.IO is used for real-time communication between clients and the server.  
 
-It handles events such as:
+It handles events such as:  
 
-User joining a room
-User leaving a room
-WebRTC offer
-WebRTC answer
-ICE candidates
-User connected/disconnected
-Real-time meeting events
+User joining a room  
+User leaving a room  
+WebRTC offer  
+WebRTC answer  
+ICE candidates  
+User connected/disconnected  
+Real-time meeting events  
 
-Example signaling flow:
+Example signaling flow:  
 
-Client A
+Client A  
    │
-   │ socket.emit("offer")
+   │ socket.emit("offer")  
    ▼
-Socket.IO Server
+Socket.IO Server  
    │
-   │ socket.to(room).emit("offer")
+   │ socket.to(room).emit("offer")  
    ▼
-Client B
+Client B  

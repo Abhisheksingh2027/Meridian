@@ -17,7 +17,11 @@ const io = connectToSocket(server);
 
 
 app.set("port", (process.env.PORT || 8000))
-app.use(cors());
+app.use(cors({
+    origin: "https://meridian-1-5x4j.onrender.com",
+    credentials: true,
+  }
+));
 app.use(express.json({ limit: "40kb" }));
 app.use(express.urlencoded({ limit: "40kb", extended: true }));
 
@@ -26,7 +30,7 @@ app.use("/api/v1/users", userRoutes);
 const start = async () => {
     app.set("mongo_user")
 
-    connectDB();
+    await connectDB();
     // const connectionDb = await mongoose.connect("mongodb+srv://abhisinghnimiyadih_db_user:YR24romD4MmN8oKJ@cluster0.gqburhf.mongodb.net/?appName=Cluster0")
 
 //    console.log(`MONGO Connected DB HOst: ${connectionDb.connection.host}`)
